@@ -16,6 +16,11 @@ def solution(m):
             terminal_states_with_probability[state_idx] = state
         else:
             non_terminal_with_probability[state_idx] = state
+
+    if len(non_terminal_with_probability.keys())==len(m):
+        return [0,0]
+    if len(terminal_states_with_probability.keys())==len(m):
+        return [len(m),len(m)]
     I = []
     Q = []
     R = []
@@ -91,6 +96,14 @@ test_1=[
     [0, 0, 0, 0, 0], 
     [0, 0, 0, 0, 0], 
     [0, 0, 0, 0, 0]
+]
+
+test_1=[
+    [0]*5,
+    [0]*5,
+    [0]*5,
+    [0]*5,
+    [0]*5
 ]
 
 print(solution(test_1))
